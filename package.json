@@ -16,13 +16,14 @@
     "dev": "PORT=3060 nuxt dev",
     "generate": "nuxt generate",
     "preview": "PORT=3061 nuxt preview",
-    "postinstall": "nuxt prepare && node node_modules/puppeteer/install.mjs"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/ui": "^2.15.2",
+    "@sparticuz/chromium": "123.0.1",
     "nuxt": "^3.11.2",
     "puppeteer": "^22.7.1",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue": "^3.4.26",
+    "vue-router": "^4.3.2"
   }
 }
