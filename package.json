@@ -1,0 +1,28 @@
+{
+  "name": "x-avatar-extractor",
+  "version": "0.0.1",
+  "description": "A tool to extract x(twitter) avatar by user name",
+  "keywords": [
+    "twitter",
+    "avatar",
+    "extractor"
+  ],
+  "author": "Alexander Zhao <alexandermzchiu@gmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@9.0.6",
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "PORT=3060 nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.15.2",
+    "nuxt": "^3.11.2",
+    "puppeteer": "^22.7.1",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  }
+}
