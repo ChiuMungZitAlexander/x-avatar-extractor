@@ -16,7 +16,7 @@
     "dev": "PORT=3060 nuxt dev",
     "generate": "nuxt generate",
     "preview": "PORT=3061 nuxt preview",
-    "postinstall": "nuxt prepare && pnpm dlx puppeteer browsers install chrome"
+    "postinstall": "nuxt prepare && node node_modules/puppeteer/install.mjs"
   },
   "dependencies": {
     "@nuxt/ui": "^2.15.2",
