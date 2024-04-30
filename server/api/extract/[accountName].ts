@@ -1,4 +1,8 @@
 import puppeteer from "puppeteer";
+import chromium from "@sparticuz/chromium";
+
+chromium.setHeadlessMode = true;
+chromium.setGraphicsMode = false;
 
 export interface IExtractAccountNameResponse {
   avatar: string;
@@ -11,7 +15,16 @@ export default defineEventHandler<Promise<IExtractAccountNameResponse | null>>(
     if (!accountName) return null;
 
     try {
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath:
+          process.env.NODE_ENV !== "production"
+            ? undefined
+            : await chromium.executablePath(),
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
+      });
       const page = await browser.newPage();
       await page.setUserAgent(
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
